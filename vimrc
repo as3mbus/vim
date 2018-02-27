@@ -30,3 +30,7 @@ set relativenumber number
 " change tabs to 4 space
 set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 syntax on
+" add .Xresources Extension for managing xresource in multiple file
+filetype on
+au BufNewFile,BufRead */.Xresources.d/* set filetype=xdefaults
+set background=dark
