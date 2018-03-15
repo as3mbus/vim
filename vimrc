@@ -33,4 +33,15 @@ syntax on
 " add .Xresources Extension for managing xresource in multiple file
 filetype on
 au BufNewFile,BufRead */.Xresources.d/* set filetype=xdefaults
+" set dark background to highlight text with light color
 set background=dark
+
+" Vim-Plug call
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'tpope/vim-dispatch'
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
