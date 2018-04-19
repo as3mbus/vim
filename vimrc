@@ -23,16 +23,21 @@ if has('gui_running')
   map <S-Insert> <MiddleMouse>
   map! <S-Insert> <MiddleMouse>
 endif
+" ============== self modified vimrc ==========
 " set incremental search, highlight search and ignore case for searching
 set is hlsearch ic
+
 " show relative line number and line number for currentline 
 set relativenumber number
+
 " change tabs to 4 space
 set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 syntax on
+
 " add .Xresources Extension for managing xresource in multiple file
 filetype on
 au BufNewFile,BufRead */.Xresources.d/* set filetype=xdefaults
+
 " set dark background to highlight text with light color
 set background=dark
 
@@ -42,6 +47,9 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'OmniSharp/omnisharp-vim'
-Plug 'tpope/vim-dispatch'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" setup omnisharp-roslyn for csharp auto completion
+let g:OmniSharp_server_path = '/home/as3mbus/.vim/omnisharp.http-linux-x64/omnisharp/OmniSharp.exe'
+let g:OmniSharp_server_use_mono = 1
