@@ -1,9 +1,12 @@
-" The ArchLinux global vimrc - setting only a few sane defaults
+" Personal Vimrc setting with hope of documentation and better understanding
+" with vim 
 "
-" Maintainer:      Thomas Dziedzic [gostrc@gmail.com]
+" Maintainer:       as3mbus [asembus@gmail.com]
 "
-" NEVER EDIT THIS FILE, IT'S OVERWRITTEN UPON UPGRADES, GLOBAL CONFIGURATION
-" SHALL BE DONE IN /etc/vimrc, USER SPECIFIC CONFIGURATION IN ~/.vimrc
+" [Snippet] The ArchLinux global vimrc - setting only a few sane defaults
+" maintaned by Thomas Dziedzic [gostrc@gmail.com]
+"
+" GLOBAL CONFIGURATION SHALL BE DONE IN /etc/vimrc, USER SPECIFIC CONFIGURATION IN ~/.vimrc
 
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
@@ -47,9 +50,23 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'tpope/vim-dispatch'
+Plug 'bkad/CamelCaseMotion'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 " setup omnisharp-roslyn for csharp auto completion
 let g:OmniSharp_server_path = '/home/as3mbus/.vim/omnisharp.http-linux-x64/omnisharp/OmniSharp.exe'
 let g:OmniSharp_server_use_mono = 1
+
+" [snippet] enable camelcase plugin (OK)
+" source: https://github.com/bkad/CamelCaseMotion#usage
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
+cnoremap W w
